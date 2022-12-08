@@ -6,9 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Stack</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <link rel="icon" type="image/x-icon"
+      href="<%= Routes.static_path(@conn, "/images/stack.ico") %>"/>
+    <link rel="apple-touch-icon" type="image/x-icon"
+      href="<%= Routes.static_path(@conn, "/images/clock256.png") %>"/>
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
   <body>
-    <%= @inner_content %>
+    <header>
+      <h1>
+        <%= link "Stack", to: Routes.top_path(@conn, :index, []) %>
+      </h1>
+    </header>
+    <main>  
+      <%= @inner_content %>
+    </main>
+    <footer>
+      &copy; 2022 Ricky
+    </footer>
   </body>
 </html>
