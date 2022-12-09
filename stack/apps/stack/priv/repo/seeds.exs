@@ -3,7 +3,7 @@ alias Stack.Fixture.StockItem
 
 insert!(%StockItem{
     name: "食器用洗剤",
-    description: "食器を洗う用"
+    description: "食器を\n洗う用"
 })
 
 insert!(%StockItem{
