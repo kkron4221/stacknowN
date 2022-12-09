@@ -1,1 +1,5 @@
-<p>top#index</p>
+<div>
+    <%= link to: Routes.stock_item_path(@conn, :index) do %>
+        <i class="fa fa-list"></i>備品一覧
+    <% end %>
+</div>

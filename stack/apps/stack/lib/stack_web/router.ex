@@ -13,5 +13,6 @@ defmodule StackWeb.Router do
     pipe_through :browser
 
     get "/", TopController, :index
+    get "/stock_items", StockItemController, :index
   end
 end
