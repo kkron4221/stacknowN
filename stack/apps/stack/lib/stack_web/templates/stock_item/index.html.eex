@@ -2,13 +2,21 @@
     <%= for item <- @stock_items do %>
     <div class="row">
         <div class="col-12 col-md-4">
-            <span class="stock-item-name"><%= item.name %></span>
+            <span class="stock-item-name">
+                <%= link item.name,
+                    to: Routes.stock_item_path(@conn, :show, item.id) %>
+            </span>
         </div>
         <div class="col-12 col-md-8">
             <span class="stock-item-description">
                 <%= for line <- String.split(item.description, "\n") do %>
                     <%= line %><br>
                 <% end %>
+            </span>
+        </div>
+        <div class="col-12">
+            <span class="stock-item-duration">
+                <%= format_duration(item) %>
             </span>
         </div>
     </div>

@@ -4,6 +4,12 @@ defmodule Stack.Fixture do
     alias Stack.Fixture.StockItem
 
     def list_stock_items do
-        Repo.all(StockItem)
+        StockItem
+        |> Ecto.Query.order_by(asc: :order_time)
+        |> Repo.all()
+    end
+
+    def get_stock_item!(id) do
+        Repo.get!(StockItem, id)
     end
 end

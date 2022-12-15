@@ -5,8 +5,9 @@ defmodule Stack.Fixture.StockItem do
   schema "stock_items" do
     field :name, :string
     field :description, :string
+    field :order_time, :utc_datetime
     
-    timestamps()
+    timestamps(type: :utc_datetime_usec)
   end
 
   @doc false

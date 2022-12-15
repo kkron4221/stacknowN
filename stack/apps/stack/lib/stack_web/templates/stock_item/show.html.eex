@@ -1,0 +1,20 @@
+<div class="container-fluid stock-item">
+    <div class="row">
+        <div class="col-12 col-md-4 bg-info text-white text-md-right">備品名</div>
+        <div class="col-12 col-md-8"><%= @stock_item.name %></div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-4 bg-info text-white text-md-right">説明</div>
+        <div class="col-12 col-md-8">
+            <%= for line <- String.split(@stock_item.description, "\n") do %>
+                <%= line %><br>
+            <% end %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-4 bg-info text-white text-md-right">なくなった日時</div>
+        <div class="col-12 col-md-8">
+            <%= Strftime.format!(@stock_item.order_time, "%m月%-d日 %H:%M") %>
+        </div>
+    </div>
+</div>

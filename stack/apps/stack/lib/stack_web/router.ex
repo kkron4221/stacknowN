@@ -14,5 +14,6 @@ defmodule StackWeb.Router do
 
     get "/", TopController, :index
     get "/stock_items", StockItemController, :index
+    get "/stock_items/:id", StockItemController, :show
   end
 end
