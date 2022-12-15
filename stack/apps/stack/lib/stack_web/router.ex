@@ -13,6 +13,7 @@ defmodule StackWeb.Router do
     pipe_through :browser
 
     get "/", TopController, :index
+    get "/lessons/form", LessonController, :form
     get "/stock_items", StockItemController, :index
     get "/stock_items/:id", StockItemController, :show
   end
